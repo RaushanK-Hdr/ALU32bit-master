@@ -1,0 +1,427 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.1
+vADD_er
+Z0 !s110 1720233398
+!i10b 1
+!s100 2^LD>lo_EYCTYC8<7[4O80
+I`17:@o;NalCPbh?KCZN=I0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/RAUSHAN KUMAR/Desktop/ALU_unit
+Z3 w1720196312
+Z4 8C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v
+Z5 FC:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v
+L0 49
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1720233398.000000
+Z8 !s107 C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v|
+Z9 !s90 -reportprogress|300|-work|sim|-stats=none|C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v|
+!i113 1
+Z10 o-work sim
+Z11 tCvgOpt 0
+n@a@d@d_er
+vALU_unit
+R0
+!i10b 1
+!s100 ]=2RlcmS8g?NVcO^CGa<T0
+IlSmk:<GHbYF]@DW^1^[S61
+R1
+R2
+R3
+R4
+R5
+L0 214
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@a@l@u_unit
+vAND_gate
+R0
+!i10b 1
+!s100 WDZF]<UIh=S;5lFlPU^<K0
+IVIPl>T[Za@KiC40]2eEa`1
+R1
+R2
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@a@n@d_gate
+vDFF
+R0
+!i10b 1
+!s100 iUUaa^6TSFmT4KJ1jmP7U3
+Ih0gYWg2=c9XiDP]dJH`690
+R1
+R2
+R3
+R4
+R5
+L0 119
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@d@f@f
+vDFF_register
+R0
+!i10b 1
+!s100 5hBbS@;c@eK@PlY8icOCd3
+I_j7CQLhHAfo43Z2ldShz;3
+R1
+R2
+R3
+R4
+R5
+L0 129
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@d@f@f_register
+vDIV_er
+R0
+!i10b 1
+!s100 AhJYAO7UN<<R<`GH?cjbk0
+Im^ok0?mH9@ggOX^ZN60Kf1
+R1
+R2
+R3
+R4
+R5
+L0 84
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@d@i@v_er
+vERROR_Check
+R0
+!i10b 1
+!s100 TXK4X6O^RnVWK<0IbZDVn1
+IIAlTBncPzSKV<BTAj1S]30
+R1
+R2
+R3
+R4
+R5
+L0 147
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@e@r@r@o@r_@check
+vMUL_er
+R0
+!i10b 1
+!s100 Tn>PBJ9UaWERd;zUlaMLL3
+IBiiKi]Z3N0h]lIb6XYE?31
+R1
+R2
+R3
+R4
+R5
+L0 73
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@m@u@l_er
+vMUX
+R0
+!i10b 1
+!s100 U[JbkkGZTW8=F3EQY@gnU0
+I>EEInYdVOS0<?@ihjcAeC3
+R1
+R2
+R3
+R4
+R5
+L0 171
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@m@u@x
+vNAND_gate
+R0
+!i10b 1
+!s100 ;c5i@aGi:RKWCDcnTC^me2
+IefnCX[DW^E3k>o>KWA3]z1
+R1
+R2
+R3
+R4
+R5
+L0 28
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@n@a@n@d_gate
+vNOR_gate
+R0
+!i10b 1
+!s100 c`oi>6>AKc1@P]OW^XOPn1
+INV0OL52QU>VVG[jkmOk9a1
+R1
+R2
+R3
+R4
+R5
+L0 35
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@n@o@r_gate
+vNOT_gate
+R0
+!i10b 1
+!s100 eELnUBHXYAXZDM4FoX1C33
+ISEZoD=Z2gj;>]C<8Bf4^U2
+R1
+R2
+R3
+R4
+R5
+L0 22
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@n@o@t_gate
+vOR_gate
+R0
+!i10b 1
+!s100 7baiQ]=WTfYi@jZT_8Z@`2
+IlVja2l[j7NAX2=:ICoJN`2
+R1
+R2
+R3
+R4
+R5
+L0 8
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@o@r_gate
+vSHL_Logic
+R0
+!i10b 1
+!s100 g65bYV5kS[>g?>L>1kAT53
+I7NV@UIN4lRZen:Q=OcG9f0
+R1
+R2
+R3
+R4
+R5
+L0 99
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@s@h@l_@logic
+vSHR_Logic
+R0
+!i10b 1
+!s100 U24]`nNF`^Fo@49zKon>A3
+Idk4Eb5Q38mjAO?OBzOHS=0
+R1
+R2
+R3
+R4
+R5
+L0 109
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@s@h@r_@logic
+vSUB_er
+R0
+!i10b 1
+!s100 kOc1adgB7P0fc4N5=G8=Z3
+IceXaLFURZWX@:k6dT:DVV2
+R1
+R2
+R3
+R4
+R5
+L0 62
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@s@u@b_er
+vtestbench
+R0
+!i10b 1
+!s100 nRASe;ci6=OBJzD3GKaJ`3
+ICikKS2Afj85E@e8Gf?:SL3
+R1
+R2
+w1720196170
+8C:/Users/RAUSHAN KUMAR/Desktop/pts/tb.v
+FC:/Users/RAUSHAN KUMAR/Desktop/pts/tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/RAUSHAN KUMAR/Desktop/pts/tb.v|
+!s90 -reportprogress|300|-work|sim|-stats=none|C:/Users/RAUSHAN KUMAR/Desktop/pts/tb.v|
+!i113 1
+R10
+R11
+vXNOR_gate
+R0
+!i10b 1
+!s100 H_zN5EU;0J8]echJl<TFg2
+INYoNO8KCzWD`=:T@Em8AH0
+R1
+R2
+R3
+R4
+R5
+L0 42
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@x@n@o@r_gate
+vXOR_gate
+R0
+!i10b 1
+!s100 ^nF<Qd80HP>ihIKo3F8S]0
+I:nFW0NT5C[oU>ZXdk]N`^2
+R1
+R2
+R3
+R4
+R5
+L0 15
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@x@o@r_gate

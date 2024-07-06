@@ -1,0 +1,950 @@
+Analysis & Synthesis report for ALU_unit
+Sat Jul 06 08:03:58 2024
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for Inferred Entity Instance: DIV_er:Ch4|lpm_divide:Mod0
+ 11. Parameter Settings for Inferred Entity Instance: DIV_er:Ch4|lpm_divide:Div0
+ 12. Parameter Settings for Inferred Entity Instance: MUL_er:Ch3|lpm_mult:Mult0
+ 13. lpm_mult Parameter Settings by Entity Instance
+ 14. Port Connectivity Checks: "MUX:CMD"
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Jul 06 08:03:58 2024       ;
+; Quartus Prime Version       ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name               ; ALU_unit                                    ;
+; Top-level Entity Name       ; ALU_unit                                    ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 3,251                                       ;
+; Total pins                  ; 103                                         ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; ALU_unit           ; ALU_unit           ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; ../../pts/rtl.v                  ; yes             ; User Verilog HDL File        ; C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v                                   ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_vnl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/lpm_divide_vnl.tdf        ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/sign_div_unsign_9nh.tdf   ;         ;
+; db/alt_u_div_hle.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/alt_u_div_hle.tdf         ;         ;
+; db/add_sub_i4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_i4c.tdf           ;         ;
+; db/add_sub_j4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_j4c.tdf           ;         ;
+; db/add_sub_36c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_36c.tdf           ;         ;
+; db/add_sub_46c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_46c.tdf           ;         ;
+; db/add_sub_56c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_56c.tdf           ;         ;
+; db/add_sub_66c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_66c.tdf           ;         ;
+; db/add_sub_76c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_76c.tdf           ;         ;
+; db/add_sub_86c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_86c.tdf           ;         ;
+; db/add_sub_96c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_96c.tdf           ;         ;
+; db/add_sub_a6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_a6c.tdf           ;         ;
+; db/add_sub_b6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_b6c.tdf           ;         ;
+; db/add_sub_c6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_c6c.tdf           ;         ;
+; db/add_sub_k4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_k4c.tdf           ;         ;
+; db/add_sub_d6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_d6c.tdf           ;         ;
+; db/add_sub_e6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_e6c.tdf           ;         ;
+; db/add_sub_f6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_f6c.tdf           ;         ;
+; db/add_sub_g6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_g6c.tdf           ;         ;
+; db/add_sub_h6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_h6c.tdf           ;         ;
+; db/add_sub_i6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_i6c.tdf           ;         ;
+; db/add_sub_j6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_j6c.tdf           ;         ;
+; db/add_sub_k6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_k6c.tdf           ;         ;
+; db/add_sub_l6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_l6c.tdf           ;         ;
+; db/add_sub_m6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_m6c.tdf           ;         ;
+; db/add_sub_l4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_l4c.tdf           ;         ;
+; db/add_sub_n6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_n6c.tdf           ;         ;
+; db/add_sub_o6c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_o6c.tdf           ;         ;
+; db/add_sub_m4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_m4c.tdf           ;         ;
+; db/add_sub_n4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_n4c.tdf           ;         ;
+; db/add_sub_o4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_o4c.tdf           ;         ;
+; db/add_sub_p4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_p4c.tdf           ;         ;
+; db/add_sub_q4c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_q4c.tdf           ;         ;
+; db/add_sub_26c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_26c.tdf           ;         ;
+; db/lpm_divide_svl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/lpm_divide_svl.tdf        ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc     ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.inc        ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc        ;         ;
+; db/mult_ios.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf              ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Total logic elements                        ; 3251      ;
+;     -- Combinational with no register       ; 3219      ;
+;     -- Register only                        ; 0         ;
+;     -- Combinational with a register        ; 32        ;
+;                                             ;           ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1172      ;
+;     -- 3 input functions                    ; 1712      ;
+;     -- 2 input functions                    ; 185       ;
+;     -- 1 input functions                    ; 182       ;
+;     -- 0 input functions                    ; 0         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 1824      ;
+;     -- arithmetic mode                      ; 1427      ;
+;     -- qfbk mode                            ; 0         ;
+;     -- register cascade mode                ; 0         ;
+;     -- synchronous clear/load mode          ; 0         ;
+;     -- asynchronous clear/load mode         ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 32        ;
+; Total logic cells in carry chains           ; 1565      ;
+; I/O pins                                    ; 103       ;
+; Maximum fan-out node                        ; opcode[1] ;
+; Maximum fan-out                             ; 108       ;
+; Total fan-out                               ; 10470     ;
+; Average fan-out                             ; 3.12      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                 ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                         ; Entity Name         ; Library Name ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |ALU_unit                                  ; 3251 (0)    ; 32           ; 0          ; 103  ; 0            ; 3219 (0)     ; 0 (0)             ; 32 (0)           ; 1565 (0)        ; 0 (0)      ; |ALU_unit                                                                                                                                   ; ALU_unit            ; work         ;
+;    |DFF_register:ACC|                      ; 278 (278)   ; 32           ; 0          ; 0    ; 0            ; 246 (246)    ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |ALU_unit|DFF_register:ACC                                                                                                                  ; DFF_register        ; work         ;
+;    |DIV_er:Ch4|                            ; 2279 (0)    ; 0            ; 0          ; 0    ; 0            ; 2279 (0)     ; 0 (0)             ; 0 (0)            ; 1230 (0)        ; 0 (0)      ; |ALU_unit|DIV_er:Ch4                                                                                                                        ; DIV_er              ; work         ;
+;       |lpm_divide:Div0|                    ; 1137 (0)    ; 0            ; 0          ; 0    ; 0            ; 1137 (0)     ; 0 (0)             ; 0 (0)            ; 615 (0)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0                                                                                                        ; lpm_divide          ; work         ;
+;          |lpm_divide_svl:auto_generated|   ; 1137 (0)    ; 0            ; 0          ; 0    ; 0            ; 1137 (0)     ; 0 (0)             ; 0 (0)            ; 615 (0)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated                                                                          ; lpm_divide_svl      ; work         ;
+;             |sign_div_unsign_9nh:divider|  ; 1137 (0)    ; 0            ; 0          ; 0    ; 0            ; 1137 (0)     ; 0 (0)             ; 0 (0)            ; 615 (0)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider                                              ; sign_div_unsign_9nh ; work         ;
+;                |alt_u_div_hle:divider|     ; 1137 (522)  ; 0            ; 0          ; 0    ; 0            ; 1137 (522)   ; 0 (0)             ; 0 (0)            ; 615 (0)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider                        ; alt_u_div_hle       ; work         ;
+;                   |add_sub_26c:add_sub_9|  ; 13 (13)     ; 0            ; 0          ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 0 (0)            ; 13 (13)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_26c:add_sub_9  ; add_sub_26c         ; work         ;
+;                   |add_sub_36c:add_sub_10| ; 14 (14)     ; 0            ; 0          ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 14 (14)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_36c:add_sub_10 ; add_sub_36c         ; work         ;
+;                   |add_sub_46c:add_sub_11| ; 15 (15)     ; 0            ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 15 (15)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_46c:add_sub_11 ; add_sub_46c         ; work         ;
+;                   |add_sub_56c:add_sub_12| ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_56c:add_sub_12 ; add_sub_56c         ; work         ;
+;                   |add_sub_66c:add_sub_13| ; 17 (17)     ; 0            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 17 (17)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_66c:add_sub_13 ; add_sub_66c         ; work         ;
+;                   |add_sub_76c:add_sub_14| ; 18 (18)     ; 0            ; 0          ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 0 (0)            ; 18 (18)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_76c:add_sub_14 ; add_sub_76c         ; work         ;
+;                   |add_sub_86c:add_sub_15| ; 19 (19)     ; 0            ; 0          ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 0 (0)            ; 19 (19)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_86c:add_sub_15 ; add_sub_86c         ; work         ;
+;                   |add_sub_96c:add_sub_16| ; 20 (20)     ; 0            ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 0 (0)            ; 20 (20)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_96c:add_sub_16 ; add_sub_96c         ; work         ;
+;                   |add_sub_a6c:add_sub_17| ; 21 (21)     ; 0            ; 0          ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; 21 (21)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_a6c:add_sub_17 ; add_sub_a6c         ; work         ;
+;                   |add_sub_b6c:add_sub_18| ; 22 (22)     ; 0            ; 0          ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 0 (0)            ; 22 (22)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_b6c:add_sub_18 ; add_sub_b6c         ; work         ;
+;                   |add_sub_c6c:add_sub_19| ; 23 (23)     ; 0            ; 0          ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 0 (0)            ; 23 (23)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_c6c:add_sub_19 ; add_sub_c6c         ; work         ;
+;                   |add_sub_d6c:add_sub_20| ; 24 (24)     ; 0            ; 0          ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 0 (0)            ; 24 (24)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_d6c:add_sub_20 ; add_sub_d6c         ; work         ;
+;                   |add_sub_e6c:add_sub_21| ; 25 (25)     ; 0            ; 0          ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 0 (0)            ; 25 (25)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_e6c:add_sub_21 ; add_sub_e6c         ; work         ;
+;                   |add_sub_f6c:add_sub_22| ; 26 (26)     ; 0            ; 0          ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 0 (0)            ; 26 (26)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_f6c:add_sub_22 ; add_sub_f6c         ; work         ;
+;                   |add_sub_g6c:add_sub_23| ; 27 (27)     ; 0            ; 0          ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 0 (0)            ; 27 (27)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_g6c:add_sub_23 ; add_sub_g6c         ; work         ;
+;                   |add_sub_h6c:add_sub_24| ; 28 (28)     ; 0            ; 0          ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; 28 (28)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_h6c:add_sub_24 ; add_sub_h6c         ; work         ;
+;                   |add_sub_i6c:add_sub_25| ; 29 (29)     ; 0            ; 0          ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 0 (0)            ; 29 (29)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_i6c:add_sub_25 ; add_sub_i6c         ; work         ;
+;                   |add_sub_j6c:add_sub_26| ; 30 (30)     ; 0            ; 0          ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_j6c:add_sub_26 ; add_sub_j6c         ; work         ;
+;                   |add_sub_k4c:add_sub_2|  ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_k4c:add_sub_2  ; add_sub_k4c         ; work         ;
+;                   |add_sub_k6c:add_sub_27| ; 31 (31)     ; 0            ; 0          ; 0    ; 0            ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_k6c:add_sub_27 ; add_sub_k6c         ; work         ;
+;                   |add_sub_l4c:add_sub_3|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_l4c:add_sub_3  ; add_sub_l4c         ; work         ;
+;                   |add_sub_l6c:add_sub_28| ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_l6c:add_sub_28 ; add_sub_l6c         ; work         ;
+;                   |add_sub_m4c:add_sub_4|  ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_m4c:add_sub_4  ; add_sub_m4c         ; work         ;
+;                   |add_sub_m6c:add_sub_29| ; 33 (33)     ; 0            ; 0          ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_m6c:add_sub_29 ; add_sub_m6c         ; work         ;
+;                   |add_sub_n4c:add_sub_5|  ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_n4c:add_sub_5  ; add_sub_n4c         ; work         ;
+;                   |add_sub_n6c:add_sub_30| ; 34 (34)     ; 0            ; 0          ; 0    ; 0            ; 34 (34)      ; 0 (0)             ; 0 (0)            ; 34 (34)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_n6c:add_sub_30 ; add_sub_n6c         ; work         ;
+;                   |add_sub_o4c:add_sub_6|  ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_o4c:add_sub_6  ; add_sub_o4c         ; work         ;
+;                   |add_sub_o6c:add_sub_31| ; 35 (35)     ; 0            ; 0          ; 0    ; 0            ; 35 (35)      ; 0 (0)             ; 0 (0)            ; 35 (35)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_o6c:add_sub_31 ; add_sub_o6c         ; work         ;
+;                   |add_sub_p4c:add_sub_7|  ; 11 (11)     ; 0            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_p4c:add_sub_7  ; add_sub_p4c         ; work         ;
+;                   |add_sub_q4c:add_sub_8|  ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Div0|lpm_divide_svl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_q4c:add_sub_8  ; add_sub_q4c         ; work         ;
+;       |lpm_divide:Mod0|                    ; 1142 (0)    ; 0            ; 0          ; 0    ; 0            ; 1142 (0)     ; 0 (0)             ; 0 (0)            ; 615 (0)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0                                                                                                        ; lpm_divide          ; work         ;
+;          |lpm_divide_vnl:auto_generated|   ; 1142 (0)    ; 0            ; 0          ; 0    ; 0            ; 1142 (0)     ; 0 (0)             ; 0 (0)            ; 615 (0)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated                                                                          ; lpm_divide_vnl      ; work         ;
+;             |sign_div_unsign_9nh:divider|  ; 1142 (0)    ; 0            ; 0          ; 0    ; 0            ; 1142 (0)     ; 0 (0)             ; 0 (0)            ; 615 (0)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider                                              ; sign_div_unsign_9nh ; work         ;
+;                |alt_u_div_hle:divider|     ; 1142 (526)  ; 0            ; 0          ; 0    ; 0            ; 1142 (526)   ; 0 (0)             ; 0 (0)            ; 615 (0)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider                        ; alt_u_div_hle       ; work         ;
+;                   |add_sub_26c:add_sub_9|  ; 13 (13)     ; 0            ; 0          ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 0 (0)            ; 13 (13)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_26c:add_sub_9  ; add_sub_26c         ; work         ;
+;                   |add_sub_36c:add_sub_10| ; 14 (14)     ; 0            ; 0          ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 14 (14)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_36c:add_sub_10 ; add_sub_36c         ; work         ;
+;                   |add_sub_46c:add_sub_11| ; 15 (15)     ; 0            ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 15 (15)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_46c:add_sub_11 ; add_sub_46c         ; work         ;
+;                   |add_sub_56c:add_sub_12| ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_56c:add_sub_12 ; add_sub_56c         ; work         ;
+;                   |add_sub_66c:add_sub_13| ; 17 (17)     ; 0            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 17 (17)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_66c:add_sub_13 ; add_sub_66c         ; work         ;
+;                   |add_sub_76c:add_sub_14| ; 18 (18)     ; 0            ; 0          ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 0 (0)            ; 18 (18)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_76c:add_sub_14 ; add_sub_76c         ; work         ;
+;                   |add_sub_86c:add_sub_15| ; 19 (19)     ; 0            ; 0          ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 0 (0)            ; 19 (19)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_86c:add_sub_15 ; add_sub_86c         ; work         ;
+;                   |add_sub_96c:add_sub_16| ; 20 (20)     ; 0            ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 0 (0)            ; 20 (20)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_96c:add_sub_16 ; add_sub_96c         ; work         ;
+;                   |add_sub_a6c:add_sub_17| ; 21 (21)     ; 0            ; 0          ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; 21 (21)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_a6c:add_sub_17 ; add_sub_a6c         ; work         ;
+;                   |add_sub_b6c:add_sub_18| ; 22 (22)     ; 0            ; 0          ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 0 (0)            ; 22 (22)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_b6c:add_sub_18 ; add_sub_b6c         ; work         ;
+;                   |add_sub_c6c:add_sub_19| ; 23 (23)     ; 0            ; 0          ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 0 (0)            ; 23 (23)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_c6c:add_sub_19 ; add_sub_c6c         ; work         ;
+;                   |add_sub_d6c:add_sub_20| ; 24 (24)     ; 0            ; 0          ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 0 (0)            ; 24 (24)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_d6c:add_sub_20 ; add_sub_d6c         ; work         ;
+;                   |add_sub_e6c:add_sub_21| ; 25 (25)     ; 0            ; 0          ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 0 (0)            ; 25 (25)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_e6c:add_sub_21 ; add_sub_e6c         ; work         ;
+;                   |add_sub_f6c:add_sub_22| ; 26 (26)     ; 0            ; 0          ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 0 (0)            ; 26 (26)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_f6c:add_sub_22 ; add_sub_f6c         ; work         ;
+;                   |add_sub_g6c:add_sub_23| ; 27 (27)     ; 0            ; 0          ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 0 (0)            ; 27 (27)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_g6c:add_sub_23 ; add_sub_g6c         ; work         ;
+;                   |add_sub_h6c:add_sub_24| ; 28 (28)     ; 0            ; 0          ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; 28 (28)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_h6c:add_sub_24 ; add_sub_h6c         ; work         ;
+;                   |add_sub_i6c:add_sub_25| ; 29 (29)     ; 0            ; 0          ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 0 (0)            ; 29 (29)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_i6c:add_sub_25 ; add_sub_i6c         ; work         ;
+;                   |add_sub_j4c:add_sub_1|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_j4c:add_sub_1  ; add_sub_j4c         ; work         ;
+;                   |add_sub_j6c:add_sub_26| ; 30 (30)     ; 0            ; 0          ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_j6c:add_sub_26 ; add_sub_j6c         ; work         ;
+;                   |add_sub_k4c:add_sub_2|  ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_k4c:add_sub_2  ; add_sub_k4c         ; work         ;
+;                   |add_sub_k6c:add_sub_27| ; 31 (31)     ; 0            ; 0          ; 0    ; 0            ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_k6c:add_sub_27 ; add_sub_k6c         ; work         ;
+;                   |add_sub_l4c:add_sub_3|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_l4c:add_sub_3  ; add_sub_l4c         ; work         ;
+;                   |add_sub_l6c:add_sub_28| ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_l6c:add_sub_28 ; add_sub_l6c         ; work         ;
+;                   |add_sub_m4c:add_sub_4|  ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_m4c:add_sub_4  ; add_sub_m4c         ; work         ;
+;                   |add_sub_m6c:add_sub_29| ; 33 (33)     ; 0            ; 0          ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_m6c:add_sub_29 ; add_sub_m6c         ; work         ;
+;                   |add_sub_n4c:add_sub_5|  ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_n4c:add_sub_5  ; add_sub_n4c         ; work         ;
+;                   |add_sub_n6c:add_sub_30| ; 34 (34)     ; 0            ; 0          ; 0    ; 0            ; 34 (34)      ; 0 (0)             ; 0 (0)            ; 34 (34)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_n6c:add_sub_30 ; add_sub_n6c         ; work         ;
+;                   |add_sub_o4c:add_sub_6|  ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_o4c:add_sub_6  ; add_sub_o4c         ; work         ;
+;                   |add_sub_o6c:add_sub_31| ; 35 (35)     ; 0            ; 0          ; 0    ; 0            ; 35 (35)      ; 0 (0)             ; 0 (0)            ; 35 (35)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_o6c:add_sub_31 ; add_sub_o6c         ; work         ;
+;                   |add_sub_p4c:add_sub_7|  ; 11 (11)     ; 0            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_p4c:add_sub_7  ; add_sub_p4c         ; work         ;
+;                   |add_sub_q4c:add_sub_8|  ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |ALU_unit|DIV_er:Ch4|lpm_divide:Mod0|lpm_divide_vnl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_hle:divider|add_sub_q4c:add_sub_8  ; add_sub_q4c         ; work         ;
+;    |MUL_er:Ch3|                            ; 576 (0)     ; 0            ; 0          ; 0    ; 0            ; 576 (0)      ; 0 (0)             ; 0 (0)            ; 302 (0)         ; 0 (0)      ; |ALU_unit|MUL_er:Ch3                                                                                                                        ; MUL_er              ; work         ;
+;       |lpm_mult:Mult0|                     ; 576 (0)     ; 0            ; 0          ; 0    ; 0            ; 576 (0)      ; 0 (0)             ; 0 (0)            ; 302 (0)         ; 0 (0)      ; |ALU_unit|MUL_er:Ch3|lpm_mult:Mult0                                                                                                         ; lpm_mult            ; work         ;
+;          |mult_ios:auto_generated|         ; 576 (576)   ; 0            ; 0          ; 0    ; 0            ; 576 (576)    ; 0 (0)             ; 0 (0)            ; 302 (302)       ; 0 (0)      ; |ALU_unit|MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated                                                                                 ; mult_ios            ; work         ;
+;    |MUX:CMD|                               ; 21 (21)     ; 0            ; 0          ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU_unit|MUX:CMD                                                                                                                           ; MUX                 ; work         ;
+;    |SUB_er:Ch2|                            ; 65 (65)     ; 0            ; 0          ; 0    ; 0            ; 65 (65)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |ALU_unit|SUB_er:Ch2                                                                                                                        ; SUB_er              ; work         ;
+;    |XOR_gate:Ch7|                          ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU_unit|XOR_gate:Ch7                                                                                                                      ; XOR_gate            ; work         ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 32    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 17:1               ; 30 bits   ; 330 LEs       ; 270 LEs              ; 60 LEs                 ; Yes        ; |ALU_unit|DFF_register:ACC|rst[15] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: DIV_er:Ch4|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 32             ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_vnl ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: DIV_er:Ch4|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 32             ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_svl ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MUL_er:Ch3|lpm_mult:Mult0      ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32       ; Untyped             ;
+; LPM_WIDTHB                                     ; 32       ; Untyped             ;
+; LPM_WIDTHP                                     ; 64       ; Untyped             ;
+; LPM_WIDTHR                                     ; 64       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX V    ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_ios ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                    ;
++---------------------------------------+---------------------------+
+; Name                                  ; Value                     ;
++---------------------------------------+---------------------------+
+; Number of entity instances            ; 1                         ;
+; Entity Instance                       ; MUL_er:Ch3|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                        ;
+;     -- LPM_WIDTHB                     ; 32                        ;
+;     -- LPM_WIDTHP                     ; 64                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                        ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                        ;
+;     -- USE_EAB                        ; OFF                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                        ;
++---------------------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MUX:CMD"                                                                                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                       ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; in15 ; Input ; Info     ; Stuck at GND                                                                                                                                  ;
+; sel  ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "sel[31..4]" will be connected to GND. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Sat Jul 06 08:03:33 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU_unit -c ALU_unit
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (12018): Entity "DFF" will be ignored because it conflicts with Quartus Prime primitive name File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 119
+Warning (12090): Entity "MUX" obtained from "../../pts/rtl.v" instead of from Quartus Prime megafunction library File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 171
+Info (12021): Found 18 design units, including 18 entities, in source file /users/raushan kumar/desktop/pts/rtl.v
+    Info (12023): Found entity 1: AND_gate File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 1
+    Info (12023): Found entity 2: OR_gate File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 8
+    Info (12023): Found entity 3: XOR_gate File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 15
+    Info (12023): Found entity 4: NOT_gate File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 22
+    Info (12023): Found entity 5: NAND_gate File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 28
+    Info (12023): Found entity 6: NOR_gate File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 35
+    Info (12023): Found entity 7: XNOR_gate File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 42
+    Info (12023): Found entity 8: ADD_er File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 49
+    Info (12023): Found entity 9: SUB_er File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 62
+    Info (12023): Found entity 10: MUL_er File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 73
+    Info (12023): Found entity 11: DIV_er File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 84
+    Info (12023): Found entity 12: SHL_Logic File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 99
+    Info (12023): Found entity 13: SHR_Logic File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 109
+    Info (12023): Found entity 14: DFF_register File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 129
+    Info (12023): Found entity 15: ERROR_Check File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 147
+    Info (12023): Found entity 16: MUX File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 171
+    Info (12023): Found entity 17: ALU_unit File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 214
+Info (12127): Elaborating entity "ALU_unit" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(223): object "curA" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 223
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(224): object "curB" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 224
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(225): object "curC" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 225
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(226): object "curERROR" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 226
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(228): object "nextA" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 228
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(229): object "nextB" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 229
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(230): object "nextC" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 230
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(231): object "nextERROR" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 231
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(243): object "opcode_s0" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 243
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(244): object "opcode_s1" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 244
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(245): object "opcode_s2" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 245
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(246): object "opcode_s3" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 246
+Info (12128): Elaborating entity "ADD_er" for hierarchy "ADD_er:Ch1" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 279
+Warning (10230): Verilog HDL assignment warning at rtl.v(59): truncated value with size 32 to match size of target (1) File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 59
+Info (12128): Elaborating entity "SUB_er" for hierarchy "SUB_er:Ch2" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 280
+Info (12128): Elaborating entity "MUL_er" for hierarchy "MUL_er:Ch3" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 281
+Info (12128): Elaborating entity "DIV_er" for hierarchy "DIV_er:Ch4" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 282
+Info (12128): Elaborating entity "AND_gate" for hierarchy "AND_gate:Ch5" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 283
+Info (12128): Elaborating entity "OR_gate" for hierarchy "OR_gate:Ch6" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 284
+Info (12128): Elaborating entity "XOR_gate" for hierarchy "XOR_gate:Ch7" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 285
+Info (12128): Elaborating entity "NOT_gate" for hierarchy "NOT_gate:Ch8" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 286
+Info (12128): Elaborating entity "NAND_gate" for hierarchy "NAND_gate:Ch9" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 287
+Info (12128): Elaborating entity "NOR_gate" for hierarchy "NOR_gate:Ch10" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 288
+Info (12128): Elaborating entity "XNOR_gate" for hierarchy "XNOR_gate:Ch11" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 289
+Info (12128): Elaborating entity "SHL_Logic" for hierarchy "SHL_Logic:Ch12" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 290
+Info (12128): Elaborating entity "SHR_Logic" for hierarchy "SHR_Logic:Ch13" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 291
+Info (12128): Elaborating entity "MUX" for hierarchy "MUX:CMD" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 312
+Warning (10762): Verilog HDL Case Statement warning at rtl.v(192): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 192
+Info (12128): Elaborating entity "DFF_register" for hierarchy "DFF_register:ACC" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 314
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(134): object "zeroes" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 134
+Info (12128): Elaborating entity "ERROR_Check" for hierarchy "ERROR_Check:ERR" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 315
+Warning (10036): Verilog HDL or VHDL warning at rtl.v(156): object "ERROR_value" assigned a value but never read File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 156
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "DIV_er:Ch4|Mod0" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 93
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "DIV_er:Ch4|Div0" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 92
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "MUL_er:Ch3|Mult0" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 79
+Info (12130): Elaborated megafunction instantiation "DIV_er:Ch4|lpm_divide:Mod0" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 93
+Info (12133): Instantiated megafunction "DIV_er:Ch4|lpm_divide:Mod0" with the following parameter: File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 93
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vnl.tdf
+    Info (12023): Found entity 1: lpm_divide_vnl File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/lpm_divide_vnl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/sign_div_unsign_9nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_hle.tdf
+    Info (12023): Found entity 1: alt_u_div_hle File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/alt_u_div_hle.tdf Line: 86
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_i4c.tdf
+    Info (12023): Found entity 1: add_sub_i4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_i4c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_j4c.tdf
+    Info (12023): Found entity 1: add_sub_j4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_j4c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_36c.tdf
+    Info (12023): Found entity 1: add_sub_36c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_36c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_46c.tdf
+    Info (12023): Found entity 1: add_sub_46c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_46c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_56c.tdf
+    Info (12023): Found entity 1: add_sub_56c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_56c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_66c.tdf
+    Info (12023): Found entity 1: add_sub_66c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_66c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_76c.tdf
+    Info (12023): Found entity 1: add_sub_76c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_76c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_86c.tdf
+    Info (12023): Found entity 1: add_sub_86c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_86c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_96c.tdf
+    Info (12023): Found entity 1: add_sub_96c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_96c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_a6c.tdf
+    Info (12023): Found entity 1: add_sub_a6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_a6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_b6c.tdf
+    Info (12023): Found entity 1: add_sub_b6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_b6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_c6c.tdf
+    Info (12023): Found entity 1: add_sub_c6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_c6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_k4c.tdf
+    Info (12023): Found entity 1: add_sub_k4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_k4c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_d6c.tdf
+    Info (12023): Found entity 1: add_sub_d6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_d6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_e6c.tdf
+    Info (12023): Found entity 1: add_sub_e6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_e6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_f6c.tdf
+    Info (12023): Found entity 1: add_sub_f6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_f6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_g6c.tdf
+    Info (12023): Found entity 1: add_sub_g6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_g6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_h6c.tdf
+    Info (12023): Found entity 1: add_sub_h6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_h6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_i6c.tdf
+    Info (12023): Found entity 1: add_sub_i6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_i6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_j6c.tdf
+    Info (12023): Found entity 1: add_sub_j6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_j6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_k6c.tdf
+    Info (12023): Found entity 1: add_sub_k6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_k6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_l6c.tdf
+    Info (12023): Found entity 1: add_sub_l6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_l6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_m6c.tdf
+    Info (12023): Found entity 1: add_sub_m6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_m6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_l4c.tdf
+    Info (12023): Found entity 1: add_sub_l4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_l4c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_n6c.tdf
+    Info (12023): Found entity 1: add_sub_n6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_n6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_o6c.tdf
+    Info (12023): Found entity 1: add_sub_o6c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_o6c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_m4c.tdf
+    Info (12023): Found entity 1: add_sub_m4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_m4c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_n4c.tdf
+    Info (12023): Found entity 1: add_sub_n4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_n4c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_o4c.tdf
+    Info (12023): Found entity 1: add_sub_o4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_o4c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_p4c.tdf
+    Info (12023): Found entity 1: add_sub_p4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_p4c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_q4c.tdf
+    Info (12023): Found entity 1: add_sub_q4c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_q4c.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_26c.tdf
+    Info (12023): Found entity 1: add_sub_26c File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/add_sub_26c.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "DIV_er:Ch4|lpm_divide:Div0" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 92
+Info (12133): Instantiated megafunction "DIV_er:Ch4|lpm_divide:Div0" with the following parameter: File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 92
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_svl.tdf
+    Info (12023): Found entity 1: lpm_divide_svl File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/lpm_divide_svl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "MUL_er:Ch3|lpm_mult:Mult0" File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 79
+Info (12133): Instantiated megafunction "MUL_er:Ch3|lpm_mult:Mult0" with the following parameter: File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 79
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_ios.tdf
+    Info (12023): Found entity 1: mult_ios File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 28
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[15]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[14]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[13]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[12]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[15]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[14]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[13]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[12]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[11]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[10]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[9]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le10a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 54
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le11a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 55
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[15]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le12a[14]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 56
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[15]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[14]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[13]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le13a[12]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 57
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[15]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[14]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[13]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[12]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[11]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le14a[10]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 58
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[15]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[14]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[13]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[12]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[11]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[10]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[9]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le15a[8]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 59
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[19]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[18]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[17]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[16]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[15]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[14]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[13]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[12]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[11]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[10]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[9]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[8]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[7]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le16a[6]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 60
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[15]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[14]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[13]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[12]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[11]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[10]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[9]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[8]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[7]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[6]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[5]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le17a[4]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 61
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[11]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[10]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[9]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[8]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[7]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[6]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[5]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[4]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[3]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le18a[2]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 62
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[8]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[7]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[6]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[5]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[4]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[3]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[2]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le19a[1]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 63
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le3a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 64
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le5a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 66
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le5a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 66
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le5a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 66
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le6a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 67
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le6a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 67
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le6a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 67
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le6a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 67
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le6a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 67
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le6a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 67
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le6a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 67
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le6a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 67
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le7a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 68
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le8a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 69
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[28]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[27]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[26]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[25]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[24]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[23]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[22]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[21]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le9a[20]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 70
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le3a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 64
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le4a[33]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 65
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le4a[32]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 65
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le4a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 65
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le4a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 65
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le5a[31]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 66
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le5a[30]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 66
+        Warning (14320): Synthesized away node "MUL_er:Ch3|lpm_mult:Mult0|mult_ios:auto_generated|le5a[29]" File: C:/Users/RAUSHAN KUMAR/Desktop/ALU_unit/synth/db/mult_ios.tdf Line: 66
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13014): Ignored 798 buffer(s)
+    Info (13019): Ignored 798 SOFT buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ERR_out" is stuck at GND File: C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v Line: 221
+Info (21057): Implemented 3354 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 70 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 3251 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 334 warnings
+    Info: Peak virtual memory: 4750 megabytes
+    Info: Processing ended: Sat Jul 06 08:03:58 2024
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:25
+
+

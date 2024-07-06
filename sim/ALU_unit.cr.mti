@@ -1,0 +1,32 @@
+{C:/Users/RAUSHAN KUMAR/Desktop/pts/tb.v} {1 {vlog -work sim -stats=none {C:/Users/RAUSHAN KUMAR/Desktop/pts/tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} {C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v} {1 {vlog -work sim -stats=none {C:/Users/RAUSHAN KUMAR/Desktop/pts/rtl.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module AND_gate
+-- Compiling module OR_gate
+-- Compiling module XOR_gate
+-- Compiling module NOT_gate
+-- Compiling module NAND_gate
+-- Compiling module NOR_gate
+-- Compiling module XNOR_gate
+-- Compiling module ADD_er
+-- Compiling module SUB_er
+-- Compiling module MUL_er
+-- Compiling module DIV_er
+-- Compiling module SHL_Logic
+-- Compiling module SHR_Logic
+-- Compiling module DFF
+-- Compiling module DFF_register
+-- Compiling module ERROR_Check
+-- Compiling module MUX
+-- Compiling module ALU_unit
+
+Top level modules:
+	ALU_unit
+
+} {} {}}

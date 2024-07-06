@@ -1,0 +1,11 @@
+Fitter Status : Failed - Sat Jul 06 08:04:06 2024
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : ALU_unit
+Top-level Entity Name : ALU_unit
+Family : MAX V
+Device : 5M2210ZF256C4
+Timing Models : Final
+Total logic elements : 3,251 / 2,210 ( 147 % )
+Total pins : 103 / 203 ( 51 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
